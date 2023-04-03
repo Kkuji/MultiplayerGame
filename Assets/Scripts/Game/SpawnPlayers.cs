@@ -15,16 +15,16 @@ public class SpawnPlayers : MonoBehaviour
     [SerializeField] private GameObject _winPanel;
 
     private SpawnCoins _spawnCoins;
-    private GameObject currentPlayer;
+    private GameObject _currentPlayer;
 
     private void Start()
     {
         _spawnCoins = GetComponent<SpawnCoins>();
 
         Vector2 randomPosition = new Vector2(Random.Range(_minPostion.x, _maxPosition.x), Random.Range(_minPostion.y, _maxPosition.y));
-        currentPlayer = PhotonNetwork.Instantiate(_player.name, randomPosition, Quaternion.identity);
+        _currentPlayer = PhotonNetwork.Instantiate(_player.name, randomPosition, Quaternion.identity);
 
-        SetPlayerValues(currentPlayer);
+        SetPlayerValues(_currentPlayer);
     }
 
     private void SetPlayerValues(GameObject player)

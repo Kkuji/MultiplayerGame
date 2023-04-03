@@ -7,22 +7,22 @@ public class PlayerNickname : MonoBehaviour
 {
     [SerializeField] private float distanceY;
 
-    private RectTransform textTransform;
-    private TextMeshProUGUI nickname;
+    private RectTransform _textTransform;
+    private TextMeshProUGUI _nickname;
 
     private void Start()
     {
-        nickname = GetComponentInChildren<TextMeshProUGUI>();
-        textTransform = nickname.GetComponent<RectTransform>();
+        _nickname = GetComponentInChildren<TextMeshProUGUI>();
+        _textTransform = _nickname.GetComponent<RectTransform>();
 
-        nickname.text = GetComponent<PhotonView>().Owner.NickName;
+        _nickname.text = GetComponent<PhotonView>().Owner.NickName;
     }
 
     private void Update()
     {
-        textTransform.SetPositionAndRotation(new Vector3(transform.position.x,
+        _textTransform.SetPositionAndRotation(new Vector3(transform.position.x,
                                                          transform.position.y + distanceY,
-                                                         textTransform.position.z),
+                                                         _textTransform.position.z),
                                                          Quaternion.Euler(Vector3.zero));
     }
 }

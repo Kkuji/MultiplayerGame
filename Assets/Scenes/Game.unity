@@ -2369,8 +2369,8 @@ MonoBehaviour:
   _shootButton: {fileID: 1908782676}
   _leaveButton: {fileID: 868766711}
   _joystick: {fileID: 1429804485}
-  minPostion: {x: -7.5, y: -4.2}
-  maxPosition: {x: 7.5, y: 4.2}
+  _minPostion: {x: -8.4, y: -4.2}
+  _maxPosition: {x: 8.4, y: 4.2}
   _winPanel: {fileID: 1582939746}
 --- !u!114 &1716028220
 MonoBehaviour:
@@ -2386,9 +2386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _amount: 8
   _coin: {fileID: 4594491174709521652, guid: 988f20ec0f24bbe43a04050bbe043b2c, type: 3}
-  minPostion: {x: -7.5, y: -4.2}
-  maxPosition: {x: 7.5, y: 4.2}
-  startSpawn: 0
+  _minPostion: {x: -8.4, y: -4.2}
+  _maxPosition: {x: 8.4, y: 4.2}
 --- !u!224 &1806093926 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
