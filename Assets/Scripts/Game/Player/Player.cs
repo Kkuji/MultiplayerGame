@@ -8,10 +8,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PhotonView))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private GameObject _bullet;
-
-    private float minClamp = 0;
-    private float maxClamp = 1f;
+    private float _minClamp = 0;
+    private float _maxClamp = 1f;
     private PhotonView _view;
 
     [HideInInspector] public float coins = 0;
@@ -36,9 +34,10 @@ public class Player : MonoBehaviour
         {
             Destroy(coin.gameObject);
             coins++;
+
             if (_view.IsMine)
             {
-                coinBar.fillAmount = Mathf.Clamp(coins / allCoins, minClamp, maxClamp);
+                coinBar.fillAmount = Mathf.Clamp(coins / allCoins, _minClamp, _maxClamp);
             }
         }
         if (collision.gameObject.GetComponent<Bullet>() != null)
@@ -63,7 +62,7 @@ public class Player : MonoBehaviour
         if (_view.IsMine)
         {
             currentHealth -= damage;
-            healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, minClamp, maxClamp);
+            healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, _minClamp, _maxClamp);
             CheckIsDead();
         }
     }

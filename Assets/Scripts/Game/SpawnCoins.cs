@@ -8,8 +8,6 @@ public class SpawnCoins : MonoBehaviour
     [SerializeField] private GameObject _coin;
     [SerializeField] private Vector2 minPostion, maxPosition;
 
-    [HideInInspector] public bool startSpawn = false;
-
     public void Spawn()
     {
         Clear();

@@ -11,7 +11,7 @@ public class SpawnPlayers : MonoBehaviour
     [SerializeField] private Button _shootButton;
     [SerializeField] private Button _leaveButton;
     [SerializeField] private FixedJoystick _joystick;
-    [SerializeField] private Vector2 minPostion, maxPosition;
+    [SerializeField] private Vector2 _minPostion, _maxPosition;
     [SerializeField] private GameObject _winPanel;
 
     private SpawnCoins _spawnCoins;
@@ -21,7 +21,7 @@ public class SpawnPlayers : MonoBehaviour
     {
         _spawnCoins = GetComponent<SpawnCoins>();
 
-        Vector2 randomPosition = new Vector2(Random.Range(minPostion.x, maxPosition.x), Random.Range(minPostion.y, maxPosition.y));
+        Vector2 randomPosition = new Vector2(Random.Range(_minPostion.x, _maxPosition.x), Random.Range(_minPostion.y, _maxPosition.y));
         currentPlayer = PhotonNetwork.Instantiate(_player.name, randomPosition, Quaternion.identity);
 
         SetPlayerValues(currentPlayer);

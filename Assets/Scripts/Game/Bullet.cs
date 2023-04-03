@@ -8,12 +8,9 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _damage;
 
     private Rigidbody2D _rigidbody;
-    private PhotonView _view;
 
     private void Start()
     {
-        _view = GetComponent<PhotonView>();
-
         _rigidbody = GetComponent<Rigidbody2D>();
         _rigidbody.velocity = transform.up * _speed;
     }
