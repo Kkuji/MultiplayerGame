@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         {
             winPanel.SetActive(true);
             winPanel.GetComponentInChildren<TextMeshProUGUI>().SetText
-                ("Победил - " + GetComponent<PhotonView>().Owner.NickName + "\nКоличество собранных монет - " + GetComponent<Player>().coins);
+                ("РџРѕР±РµРґРёР» - " + GetComponent<PhotonView>().Owner.NickName + "\nГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г®ГЎГ°Г Г­Г­Г»Гµ Г¬Г®Г­ГҐГІ - " + GetComponent<Player>().coins);
         }
     }
 
